@@ -24,14 +24,14 @@
 
 ## 4. 启动方法
 1. 开发模式
-``` bash
-#   启动webpack-dev-server
-npm run dev
-```
-访问地址：http://localhost:8080/webpack-dev-server/
+    ``` bash
+    #   启动webpack-dev-server
+    npm run dev
+    ```
+    访问地址：http://localhost:8080/webpack-dev-server/
 
 2. 生产模式
-``` bash
-#   启动webpack，编译代码
-npm run build
-```
+    ``` bash
+    #   启动webpack，编译代码
+    npm run build
+    ```
