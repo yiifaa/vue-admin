@@ -9,6 +9,7 @@
 4. 内置表格实现；
 5. 内置Echarts支持；
 6. 内置表单验证机制；
+7. 支持JSDOC；
 
 ## 2. 功能特性
 1. 支持登陆验证与权限管理；
@@ -23,14 +24,14 @@
 
 ## 4. 启动方法
 1. 开发模式
-    ```bash
-    #   启动webpack-dev-server
-    npm run dev
-    ```
-    访问地址：http://localhost:8080/webpack-dev-server/
+``` bash
+#   启动webpack-dev-server
+npm run dev
+```
+访问地址：http://localhost:8080/webpack-dev-server/
+
 2. 生产模式
-    ```bash
-    #   启动webpack，编译代码
-    npn run build
-    ```
-    
+``` bash
+#   启动webpack，编译代码
+npm run build
+```
