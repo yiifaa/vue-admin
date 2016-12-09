@@ -1,6 +1,6 @@
 # Vue-Admin
-============
-基于Vue实现的管理平台
+------------
+基于Vue实现的管理平台，[DEMO展示](https://yiifaa.github.io/webpack-template/)
 
 ## 1. 技术特性
 1. 支持AMD与Webpack结合方式，按模块打包，提高代码复用性，加快代码加载速度；
