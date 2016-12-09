@@ -22,7 +22,8 @@ module.exports = {
      */
     externals: {
         'lodash' : 'lodash',
-        'jquery' : 'jquery'
+        'jquery' : 'jquery',
+        'vue'    : 'vue'
     },
     
     plugins : [
@@ -45,12 +46,44 @@ module.exports = {
                 loader: 'babel-loader',
                 include: es6,
                 exclude: /(node_modules|bower_components|dist)/
+            }, {
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            }, {
+                test: /\.scss$/,
+                loader: "style!css!sass"
+            }, {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!less-loader"
+            }, {
+                test: /\.vue$/,
+                loader: 'vue'
+            }, {
+                test: /\.json$/,
+                loader: 'json'
+            }, {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url',
+                query: {
+                    limit: 10000,
+                    name: 'img/[name].[hash:7].[ext]'
+                }
+            }, {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url',
+                query: {
+                    limit: 10000,
+                    name: 'fonts/[name].[hash:7].[ext]'
+                }
+            }, {
+                test: /\.(html|tpl)$/,
+                loader: "html"
             }
         ]
     },
     
     resolve: {
-        extensions: ['', '.es6'],
+        extensions: ['', '.es6', '.vue'],
         //  不要使用相对路径
         alias : {
             i18n : './i18n',

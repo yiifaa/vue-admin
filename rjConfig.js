@@ -9,9 +9,15 @@ require.config({
                     name: 'jquery',
                     location: 'node_modules/jquery/dist',
                     main: 'jquery'
+            }, {
+                    name: 'vue',
+                    location: 'node_modules/vue/dist',
+                    main: 'vue'
             }]
 });
 //  启动应用程序
-require(['index', 'libs'], function (init, libs) {
-    init.default();
+require(['index'], function (App) {
+    var app = new App.default({
+        el : '#appRoot'
+    })
 });
