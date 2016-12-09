@@ -1,21 +1,27 @@
 let path = require('path'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
-let es6 = path.resolve(__dirname, './es6')
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    yaml = require('js-yaml'),
+    fs = require('fs'),
+    configs;
+try {
+    configs = yaml.safeLoad(fs.readFileSync('configs.yml'), 'utf-8')
+} catch(e) {
+    console.log('解析配置文件出错，请仔细检查configs.yml')
+}
 
 module.exports = {
 
     //  主入口文件，可多个
-    entry: {
-        index : './es6/index.es6'
-    },
+    entry: configs.entry,
 
     //  输出的结果
     output: {
         filename : '[name].js',
         //  输出的路径
-        path : './dist',
-        publicPath: '/dist',
-        libraryTarget : 'umd'
+        path : configs.project.dest,
+        publicPath: configs.project.public,
+        //  umd包含了对amd、commonjs、var等多种规范的支持
+        libraryTarget : 'amd'
     },
     
     /*
@@ -30,7 +36,7 @@ module.exports = {
     plugins : [
         //  注入样式与代码
         new HtmlWebpackPlugin({
-            title  : 'STI Webpack Template',
+            title  : 'Vue Admin',
             inject : 'body',
             filename : 'index.html'
         })
@@ -45,7 +51,7 @@ module.exports = {
             {
                 test: /\.es6$/,
                 loader: 'babel-loader',
-                include: es6,
+                include: configs.project.src,
                 exclude: /(node_modules|bower_components|dist)/
             }, {
                 test: /\.css$/,

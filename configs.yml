@@ -1,0 +1,9 @@
+# The Project information
+project:
+  src:   es6/
+  dest:  ./dist
+  env:   dev
+  public: /dist
+
+entry:
+  app: ./es6/index.es6
