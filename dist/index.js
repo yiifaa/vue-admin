@@ -61,7 +61,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 	exports.default = function () {
-	    (0, _jquery2.default)('body').text(_lodash2.default.join(result, '--'));
+	    (0, _jquery2.default)('<h1/>').text(_lodash2.default.join(result, '--') + _I18nService.TITLE).appendTo('body');
 	};
 
 	var _lodash = __webpack_require__(1);
@@ -71,6 +71,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _jquery = __webpack_require__(2);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _I18nService = __webpack_require__(3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -88,6 +90,17 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var TITLE = exports.TITLE = 'HELLO, WORLD!';
 
 /***/ }
 /******/ ])
