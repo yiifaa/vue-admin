@@ -14,6 +14,7 @@ module.exports = {
         filename : '[name].js',
         //  输出的路径
         path : './dist',
+        publicPath: '/dist',
         libraryTarget : 'umd'
     },
     

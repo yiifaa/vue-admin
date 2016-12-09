@@ -7,12 +7,16 @@ import appHeader from 'components/AppHeader'
 
 let arr = [1, 2, 3]
 let result = _.fill(arr, 'a')
+let template = `<div>
+                    <H1 v-text="message"></H1>
+                    <app-header></app-header>
+                </div>`
 
 let App = Vue.extend({
-    template : `<div><H1 v-text="message"></H1><app-header></app-header></div>`,
+    template,
     data () {
         return {
-            message : 'Hello,World!'
+            message : 'Hello, Yiifaa!'
         }
     },
     
